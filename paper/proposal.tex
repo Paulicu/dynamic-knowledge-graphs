@@ -25,3 +25,70 @@ also change.
 
 I propose developing a framework that incorporates both multimodal literals and their temporal evolution within DKGs. This could involve using neural architectures capable of processing and 
 embedding multimodal information in a way that accounts for both the static and dynamic nature of KGs, improving their ability to represent real-world knowledge.
+
+\subsection{Leveraging Large Language Models (LLMs) for Temporal Reasoning}
+
+The use of Large Language Models (LLMs) in Knowledge Graph Completion (KGC) has attracted significant attention, as these models have shown the potential to enhance dynamic and temporal
+reasoning in Knowledge Graphs (KGs). In particular, LLMs offer an avenue for improving Temporal Knowledge Graph Completion (TKGC), which involves predicting missing facts in knowledge graphs
+that evolve over time. However, while promising, their application to temporal reasoning faces several challenges, as highlighted in a recent study \cite{luo2024}, which introduced a novel 
+framework for applying LLMs to TKGC tasks.
+
+The study explored how LLMs can be employed for both learning and forecasting temporal relationships within KGs, a task that is pivotal for tasks such as event prediction and forecasting future
+states of entities. The authors propose a chain-of-history framework where LLMs predict future events by leveraging historical temporal data. Despite the potential of these models, the article 
+points out that LLMs still struggle with the complexity of temporal reasoning, particularly in few-shot learning scenarios. The models often fall short of achieving robust temporal consistency, 
+especially when predictions are made about future states that are not explicitly supported by prior data.
+
+One critical issue identified in the article is the phenomenon of "hallucinations", where LLMs generate predictions that are temporally inconsistent or entirely fabricated. In the context of 
+TKGC, hallucinations can be highly problematic, as the model may output facts that conflict with the actual historical or temporal data present in the graph. For example, an LLM might 
+incorrectly predict that an entity has already completed an event in the future, which violates the temporal sequence of facts. Given the evolving nature of knowledge in dynamic KGs, ensuring 
+that predictions remain grounded in reality is a key challenge.
+
+The study also acknowledged that the few-shot learning capabilities of LLMs, while useful in certain contexts, have not led to significant improvements in performance for TKGC. The few-shot 
+paradigm typically works well when there is a clear and abundant context to draw from, but in temporal reasoning tasks, especially those involving dynamic or incomplete data, LLMs often fail 
+to capture the complex dependencies between past, present, and future states of knowledge.
+
+In addressing these challenges, my proposal extends the work by investigating verification mechanisms that can help mitigate the risk of hallucinations. These mechanisms could involve 
+cross-referencing predictions made by LLMs with existing data in the temporal context of a DKG. For instance, temporal coherence checks could be integrated, where a predicted temporal 
+relationship is verified against the evolution of past states to ensure consistency. This would not only improve the accuracy of predictions but also ensure their reliability within the 
+temporal constraints of the knowledge graph.
+
+Furthermore, I propose exploring the integration of attention mechanisms within LLMs that focus on relevant temporal contexts. Attention mechanisms, which have shown success in many areas of 
+NLP, could be adapted to prioritize facts and relationships that are temporally relevant, helping the model reduce hallucinations by ensuring that it is working within the bounds of accurate 
+temporal data. This would be especially beneficial when dealing with large and complex datasets where temporal nuances are crucial to the success of TKGC tasks.
+
+Another important consideration is that LLMs need to handle dynamic knowledge effectively, which involves incorporating a broader understanding of how knowledge evolves over time. While the 
+article primarily focused on forecasting future events based on historical data, I propose extending this idea to create a more comprehensive framework for modeling dynamic change. This would 
+involve enhancing LLMs to better understand and predict the dynamic evolution of entities and relationships within a DKG, thereby improving their ability to handle both temporal and 
+non-temporal changes.
+
+Lastly, the study emphasizes the potential of LLMs for forecasting and event prediction but also points out the limitations in current methodologies. The article, while offering a solid 
+foundation for using LLMs in TKGC, reveals the need for more research into addressing the issues of model robustness and the integration of temporal reasoning into the learning process. 
+My proposal would focus on enhancing the existing framework by incorporating advanced temporal reasoning techniques that are better suited to real-world dynamic environments.
+
+\subsection{Real-World Application and Scalability}
+
+One of the significant challenges in applying DKGs to real-world applications is the scalability of the algorithms, particularly when dealing with billions or trillions of triples. 
+While the current approaches largely focus on theoretical or controlled experimental settings, they often overlook the computational complexities that arise when scaling to large datasets. 
+
+My proposal would be to investigate the scalability of DKG algorithms, particularly in terms of both memory and processing power. This could involve exploring techniques such as distributed 
+learning, graph partitioning, and parallel processing to handle the massive size of real-world knowledge graphs. Additionally, I would propose developing benchmarking frameworks that evaluate 
+the performance of DKG algorithms across different domains, from social media data to scientific knowledge, to ensure that these algorithms can be generalized and effectively deployed in 
+real-world scenarios.
+
+\subsection{Cross-Domain Transferability of DKG Methods}
+
+Another promising direction for future research is the transferability of DKG methods across different domains. Many current studies focus on specific applications or datasets, which limits 
+the generalization of the methods. However, knowledge graphs are inherently flexible and can be applied to a wide range of domains, from finance to healthcare to social sciences. 
+
+I propose exploring the transferability of DKG algorithms across various domains by developing universal, domain-agnostic models that can be adapted to specific tasks with minimal retraining 
+or modification. This would involve investigating domain-specific knowledge and identifying key factors that could facilitate the transferability of algorithms while ensuring accuracy and 
+scalability.
+
+\subsection{Evaluation Approaches and Metrics}
+
+The current literature tends to evaluate DKG methods based on standard benchmarks, but these benchmarks may not fully capture the intricacies of real-world knowledge graph tasks.
+
+My proposal would include the development of new evaluation metrics that better assess the performance of DKG algorithms in dynamic environments. For example, in addition to traditional 
+measures such as precision, recall, and F1-score, it would be valuable to incorporate metrics that evaluate the temporal consistency of predictions over time, the robustness to noisy data, 
+and the ability to handle continuous changes in the knowledge base. Moreover, I would suggest conducting longitudinal studies to assess the long-term performance of DKG algorithms, 
+particularly in settings where the knowledge graph is continuously updated and expanded.
