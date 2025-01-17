@@ -1,0 +1,27 @@
+\section{Research Proposals}
+
+The research presented in the article provides a solid foundation for understanding and addressing the complexities of Dynamic Knowledge Graphs (DKGs), particularly in terms of representation 
+learning and tasks like Knowledge Graph Completion (KGC) and Entity Alignment (EA). However, there remain significant challenges and gaps in the current methods that, if addressed, could 
+significantly improve the adaptability and performance of DKG algorithms in real-world scenarios. If I were to further investigate this topic, my proposal would build upon the existing work 
+while exploring new research questions, experiments, and practical applications that could extend and enhance the state-of-the-art in this field.
+
+\subsection{Incorporating Schematic and Ontological Information}
+
+One key limitation of the current approaches discussed in the article is their heavy reliance on the triple structure and graph-based representations, often overlooking the rich schematic 
+or ontological information that can provide deeper insights into the relationships between entities and the structure of the knowledge itself. Ontologies and schemas are crucial for capturing 
+the semantics of the relationships in a more structured manner, and they can provide a more robust framework for understanding dynamic changes in knowledge over time. 
+
+My proposal would involve integrating ontological models into DKGs, enabling more sophisticated reasoning and inference mechanisms that consider the semantic meaning and relationships at a 
+higher level of abstraction. This could lead to more accurate and interpretable predictions in KGC and EA tasks, especially in domains that involve complex, multi-layered knowledge structures 
+such as healthcare, legal reasoning, and scientific research.
+
+\subsection{Multimodal Data Integration}
+
+Another significant gap identified in the literature is the lack of effective handling of literal information within KGs. While recent studies such as \cite{alam2024semantical} 
+have made strides in incorporating multimodal data (e.g., text, images, and numbers) into static KGs, the temporal dimension of these literals has been largely unexplored. Multimodal data, 
+especially when combined with temporal context, can provide richer, more nuanced information that can improve the quality of KG completion and entity alignment tasks. For instance, in the 
+context of news articles or scientific research, entities and relationships evolve over time, and the associated textual, numeric, or image-based literals (e.g., facts, dates, experimental data)
+also change. 
+
+I propose developing a framework that incorporates both multimodal literals and their temporal evolution within DKGs. This could involve using neural architectures capable of processing and 
+embedding multimodal information in a way that accounts for both the static and dynamic nature of KGs, improving their ability to represent real-world knowledge.
