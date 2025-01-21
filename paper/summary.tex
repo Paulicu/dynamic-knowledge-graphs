@@ -4,77 +4,109 @@ The research article under review offers an extensive overview of various method
 
 \subsection{Types of Knowledge Graphs}
 
-The paper begins by establishing a clear distinction between the three main types of Knowledge Graphs, which serve as foundational concepts in understanding dynamic data representation.
+The paper begins by establishing a clear distinction between the three main types of Knowledge Graphs, which serve as foundational concepts in understanding dynamic data 
+representation.
 
-\textbf{Static Knowledge Graphs} represent a fixed, unchanging set of facts that do not accommodate evolving or time-sensitive data. Static KGs are well-suited for situations where the facts are constant and do not change over time. An example of a static KG would be one stating that "Barack Obama is the president of the USA". Here, the knowledge remains fixed without the need to incorporate time-based updates.
+\textbf{Static Knowledge Graphs} represent a fixed, unchanging set of facts that do not accommodate evolving or time-sensitive data. Static KGs are well-suited for situations where 
+the facts are constant and do not change over time. An example of a static KG would be one stating that "Barack Obama is the president of the USA". Here, the knowledge remains fixed 
+without the need to incorporate time-based updates.
 
-\textbf{Temporal Knowledge Graphs (TKGs)} extend static KGs by incorporating time stamps to represent the validity of facts over specified periods. This enables the inclusion of time-based queries and allows for the modeling of changing facts over time. For instance, a TKG may indicate that "Barack Obama was president from 2009 to 2017", providing temporal context for the fact.
+\textbf{Temporal Knowledge Graphs (TKGs)} extend static KGs by incorporating time stamps to represent the validity of facts over specified periods. This enables the inclusion of 
+time-based queries and allows for the modeling of changing facts over time. For instance, a TKG may indicate that "Barack Obama was president from 2009 to 2017", providing temporal 
+context for the fact.
 
-\textbf{Dynamic Knowledge Graphs (DKGs)} are the most complex form of KGs, representing a series of evolving knowledge states indexed by time steps. Each snapshot of the graph can either be static or temporal, and transitions between these snapshots capture the evolution of entities, relationships, and facts over time. For example, a DKG could represent the sequence of presidents of the USA over time, with each snapshot capturing a different president and the associated time period in office.
+\textbf{Dynamic Knowledge Graphs (DKGs)} are the most complex form of KGs, representing a series of evolving knowledge states indexed by time steps. Each snapshot of the graph can 
+either be static or temporal, and transitions between these snapshots capture the evolution of entities, relationships, and facts over time. For example, a DKG could represent the 
+sequence of presidents of the USA over time, with each snapshot capturing a different president and the associated time period in office.
 
 \subsection{Techniques for Representing Temporal Information}
 
-The paper emphasizes the challenges present in modeling dynamic data and introduces various techniques for incorporating temporal information into Knowledge Graphs. One of the core issues is that dynamic data requires methods for tracking changes over time while maintaining the consistency of the graph's structure.
+The paper emphasizes the challenges present in modeling dynamic data and introduces various techniques for incorporating temporal information into Knowledge Graphs. 
+One of the core issues is that dynamic data requires methods for tracking changes over time while maintaining the consistency of the graph's structure.
 
-One common approach is the use of \textbf{Temporal Properties}, where XML Schema Definition (XSD) data types such as \texttt{xsd:dateTime}, \texttt{xsd:duration}, and \texttt{xsd:date} are utilized to explicitly encode temporal aspects within KGs. By representing facts and relationships with these time-related data types, KGs can support time-based queries and reasoning, allowing the exploration of time-dependent information.
+One common approach is the use of \textbf{Temporal Properties}, where XML Schema Definition (XSD) data types such as \texttt{xsd:dateTime}, \texttt{xsd:duration}, and \texttt{xsd:date} 
+are utilized to explicitly encode temporal aspects within KGs. By representing facts and relationships with these time-related data types, KGs can support time-based queries and 
+reasoning, allowing the exploration of time-dependent information.
 
-\textbf{Reification} is another technique that extends the triple structure of KGs by treating a triple (subject, predicate, object) as the subject of a new triple. This enables the attachment of additional metadata, including temporal information, to the original triple. As a result, reification allows for the modeling of evolving facts while maintaining the flexibility to include context, such as when the fact holds true.
+\textbf{Reification} is another technique that extends the triple structure of KGs by treating a triple (subject, predicate, object) as the subject of a new triple. This enables the 
+attachment of additional metadata, including temporal information, to the original triple. As a result, reification allows for the modeling of evolving facts while maintaining the 
+flexibility to include context, such as when the fact holds true.
 
-The \textbf{Time Ontology in OWL} defines temporal concepts, such as instants, intervals, and durations, through a set of classes and properties. This ontology offers a structured approach for representing time within an OWL-compatible framework, facilitating reasoning over temporal relationships and providing a formal mechanism for incorporating time-based knowledge.
+The \textbf{Time Ontology in OWL} defines temporal concepts, such as instants, intervals, and durations, through a set of classes and properties. This ontology offers a structured 
+approach for representing time within an OWL-compatible framework, facilitating reasoning over temporal relationships and providing a formal mechanism for incorporating time-based 
+knowledge.
 
-Another method, \textbf{Named Graphs and Quadruples}, organizes triples into named graphs, which are essentially groups of triples. To incorporate temporal information, a fourth element representing the temporal context is added to each graph, providing a flexible way to manage time-sensitive data within a KG. This technique allows for the association of temporal data with specific snapshots of the graph.
+Another method, \textbf{Named Graphs and Quadruples}, organizes triples into named graphs, which are essentially groups of triples. To incorporate temporal information, a fourth 
+element representing the temporal context is added to each graph, providing a flexible way to manage time-sensitive data within a KG. This technique allows for the association of 
+temporal data with specific snapshots of the graph.
 
-\textbf{RDF-star} is an extension of the Resource Description Framework (RDF) format that enhances the expressiveness of triples by enabling the inclusion of metadata, such as temporal information, in a more compact and efficient manner. This compactness allows RDF-star to represent temporal relationships between entities and facts without sacrificing clarity or detail, improving performance in handling complex temporal queries.
+\textbf{RDF-star} is an extension of the Resource Description Framework (RDF) format that enhances the expressiveness of triples by enabling the inclusion of metadata, such as 
+temporal information, in a more compact and efficient manner. This compactness allows RDF-star to represent temporal relationships between entities and facts without sacrificing 
+clarity or detail, improving performance in handling complex temporal queries.
 
-Finally, \textbf{Versioning} involves tracking changes to facts or entities by explicitly storing their different versions over time. This technique is particularly valuable for creating historical records of knowledge, which can be queried for insights like trend analysis or anomaly detection, thus adding an important dimension to the representation of evolving knowledge.
+Finally, \textbf{Versioning} involves tracking changes to facts or entities by explicitly storing their different versions over time. This technique is particularly valuable for 
+creating historical records of knowledge, which can be queried for insights like trend analysis or anomaly detection, thus adding an important dimension to the representation of 
+evolving knowledge.
 
 \subsection{Comparison of Temporal and Dynamic Capabilities Across RDF Techniques}
 
-The paper compares different RDF techniques in terms of their temporal and dynamic capabilities. A key contribution of the paper is the comparison table that evaluates various methods based on their ability to handle temporal and dynamic data. The following table summarizes this comparison.
+The paper compares different RDF techniques in terms of their temporal and dynamic capabilities. A key contribution of the paper is the comparison table that evaluates various 
+methods based on their ability to handle temporal and dynamic data. The following table summarizes this comparison.
 
 \begin{table}[h]
     \centering
     \caption{Comparison of Temporal and Dynamic Capabilities Across Various RDF Techniques}
     \begin{tabular}{|l|c|c|}
         \hline
-        \textbf{RDF Technique} & \textbf{Temporal} & \textbf{Dynamic} \\ \hline
-        Temporal Properties     & X                &                   \\ \hline
-        Reification             & X                & X                 \\ \hline
-        Time Ontology in OWL    & X                &                   \\ \hline
-        Named Graphs and Quadruples      & X* & X*                 \\ \hline
-        RDF-star                    & X                & X                 \\ \hline
-        Versioning              &                  & X                 \\ \hline
+        \textbf{RDF Technique}           & \textbf{Temporal} & \textbf{Dynamic}  \\ \hline
+        Temporal Properties              & X                 &                   \\ \hline
+        Reification                      & X                 & X                 \\ \hline
+        Time Ontology in OWL             & X                 &                   \\ \hline
+        Named Graphs and Quadruples      & X*                & X*                \\ \hline
+        RDF-star                         & X                 & X                 \\ \hline
+        Versioning                       &                   & X                 \\ \hline
     \end{tabular}
 \end{table}
 
-Upon analyzing each technique, I find that RDF-star and versioning stand out as most versatile, as they cater to both temporal and dynamic data, making them suitable for a wide range of applications. These methods seem to strike a balance between functionality and simplicity, allowing for more flexible representations of evolving data without excessive complexity.
+Upon analyzing each technique, I find that RDF-star and versioning stand out as most versatile, as they cater to both temporal and dynamic data, making them suitable for a wide range
+of applications. These methods seem to strike a balance between functionality and simplicity, allowing for more flexible representations of evolving data without excessive complexity.
 
-However, techniques like Temporal Properties and Time Ontology in OWL are more specialized, focusing solely on the temporal aspect. While these methods are essential for tasks requiring detailed temporal reasoning, they may not be as flexible when dealing with purely dynamic data that evolves without a clear temporal component.
+However, techniques like Temporal Properties and Time Ontology in OWL are more specialized, focusing solely on the temporal aspect. While these methods are essential for tasks 
+requiring detailed temporal reasoning, they may not be as flexible when dealing with purely dynamic data that evolves without a clear temporal component.
 
-The asterisk under Named Graphs and Quadruples is a useful note, because it indicates that a choice must be made between temporal and dynamic, depending on the semantics intended by the graph owner. This adds an important nuance, as it emphasizes the trade-offs involved when designing KGs for specific applications.
+The asterisk under Named Graphs and Quadruples is a useful note, because it indicates that a choice must be made between temporal and dynamic, depending on the semantics intended 
+by the graph owner. This adds an important nuance, as it emphasizes the trade-offs involved when designing KGs for specific applications.
 
 \subsection{Prominent Knowledge Graphs and Their Temporal Representations}
 
-The paper also discusses various well-known Knowledge Graphs and their strategies for handling temporal data. These include large-scale KGs such as Wikidata and YAGO, which have adopted different methods for integrating time information into their structures. These case studies illustrate how temporal information is represented and managed within practical systems, providing insight into the strengths and weaknesses of various approaches.
+The paper also discusses various well-known Knowledge Graphs and their strategies for handling temporal data. These include large-scale KGs such as Wikidata and YAGO, which have 
+adopted different methods for integrating time information into their structures. These case studies illustrate how temporal information is represented and managed within practical 
+systems, providing insight into the strengths and weaknesses of various approaches.
 
-The authors also highlight the challenges faced by these KGs in managing the evolution of data over time, particularly in relation to entity alignment and knowledge graph completion. By examining these case studies, the paper offers valuable lessons in how real-world KGs deal with the complexities of dynamic and temporal data.
+The authors also highlight the challenges faced by these KGs in managing the evolution of data over time, particularly in relation to entity alignment and knowledge graph completion. 
+By examining these case studies, the paper offers valuable lessons in how real-world KGs deal with the complexities of dynamic and temporal data.
 
 \subsection{Methods for Dynamic Knowledge Graph Completion}
 
 In the dynamic context, the paper identifies two primary categories of methods for Knowledge Graph Completion (KGC), which aim to predict missing facts within dynamic KGs.
 
-\textbf{Temporal KG Completion} focuses on predicting missing facts in KGs with temporal data. This includes tasks such as temporal link prediction, where the goal is to predict the presence of missing temporal facts, and event forecasting, which involves predicting the occurrence of future events based on historical data.
+\textbf{Temporal KG Completion} focuses on predicting missing facts in KGs with temporal data. This includes tasks such as temporal link prediction, where the goal is to predict the 
+presence of missing temporal facts, and event forecasting, which involves predicting the occurrence of future events based on historical data.
 
-\textbf{Non-Temporal Dynamic KG Completion} deals with predicting missing facts in KGs without explicit consideration of time. These methods rely on the structural evolution of the graph, where the relationships and entities evolve over time, but the temporal aspects of the data are not explicitly modeled.
+\textbf{Non-Temporal Dynamic KG Completion} deals with predicting missing facts in KGs without explicit consideration of time. These methods rely on the structural evolution of the 
+graph, where the relationships and entities evolve over time, but the temporal aspects of the data are not explicitly modeled.
 
-These methods are evaluated using performance metrics such as Mean Reciprocal Rank (MRR) and Hits@K, which provide benchmarks for comparing the effectiveness of different KGC approaches.
+These methods are evaluated using performance metrics such as Mean Reciprocal Rank (MRR) and Hits@K, which provide benchmarks for comparing the effectiveness of different KGC 
+approaches.
 
 \subsection{Methods for Dynamic Entity Alignment}
 
 Entity Alignment (EA) in dynamic KGs is a challenging task because entities may change over time. The paper categorizes Entity Alignment methods into two main groups.
 
-\textbf{Temporal EA Methods} take into account the temporal changes in entities and relationships. These methods focus on aligning entities across different KGs while considering the evolution of the entities over time.
+\textbf{Temporal EA Methods} take into account the temporal changes in entities and relationships. These methods focus on aligning entities across different KGs while considering the 
+evolution of the entities over time.
 
-\textbf{Temporal and Evolving EA Methods} consider both the temporal evolution of entities and the changes that occur in the relationships among those entities over time. These methods are more comprehensive, as they account for both the temporal and dynamic aspects of entity alignment.
+\textbf{Temporal and Evolving EA Methods} consider both the temporal evolution of entities and the changes that occur in the relationships among those entities over time. 
+These methods are more comprehensive, as they account for both the temporal and dynamic aspects of entity alignment.
 
 These techniques are important to ensure that the KGs remain coherent and complete as they evolve over time.
